@@ -1,8 +1,11 @@
 import axios from "axios";
 
 // Create axios instance with base URL from environment variable
+// Note: Backend routes use /api prefix
+const API_BASE_URL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : "https://abc-restom-backend.onrender.com/api";
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://abc-restom-backend.onrender.com",
+  baseURL: API_BASE_URL,
 });
 
 // Add request interceptor for auth tokens

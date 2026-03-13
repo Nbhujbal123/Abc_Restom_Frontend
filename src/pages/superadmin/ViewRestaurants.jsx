@@ -44,6 +44,8 @@ const ViewRestaurants = () => {
     } catch (err) {
 
       console.error(err);
+      const errorMessage = err.response?.data?.message || err.message || 'Failed to fetch restaurants';
+      toast.error(errorMessage)
 
     } finally {
 

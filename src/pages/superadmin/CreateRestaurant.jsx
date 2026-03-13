@@ -86,7 +86,9 @@ Default Password: admin123`
 
     } catch (error) {
 
-      alert(error.response?.data?.message || "Failed to create restaurant");
+      console.error('Create restaurant error:', error);
+      const errorMessage = error.response?.data?.message || error.message || 'Failed to create restaurant';
+      alert(errorMessage);
 
     } finally {
 
