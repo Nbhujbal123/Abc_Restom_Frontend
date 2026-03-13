@@ -52,7 +52,7 @@ const SuperAdminAnalytics = () => {
       const token = localStorage.getItem("token");
 
       const res = await API.get(
-        "/api/superadmin/analytics"
+        "/api/superadmin/analytics",
         {
           headers: {
             Authorization: `Bearer ${token}`
