@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import {
   FaStore,
@@ -51,8 +51,8 @@ const SuperAdminAnalytics = () => {
 
       const token = localStorage.getItem("token");
 
-      const res = await axios.get(
-        "http://localhost:5000/api/superadmin/analytics",
+      const res = await API.get(
+        "/api/superadmin/analytics"
         {
           headers: {
             Authorization: `Bearer ${token}`

@@ -1,3 +1,3 @@
 // Centralized API configuration for RestoM
-export const API_BASE_URL = "http://localhost:5000/api";
-export const FRONTEND_URL = "http://localhost:5173"; // Change this to your production URL
+export const API_BASE_URL = import.meta.env.VITE_API_URL || "https://abc-restom-backend.onrender.com";
+export const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || "https://abc-restom-frontend.onrender.com";

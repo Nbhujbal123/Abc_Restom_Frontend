@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { FaLock, FaUser, FaEye, FaEyeSlash, FaBuilding } from 'react-icons/fa'
-import axios from 'axios'
+import API from '../../services/api'
 
 const AdminLogin: React.FC = () => {
   const [credentials, setCredentials] = useState({
@@ -41,8 +41,8 @@ const AdminLogin: React.FC = () => {
     setError('')
 
     try {
-      const res = await axios.post(
-        'http://localhost:5000/api/auth/login',
+      const res = await API.post(
+        '/api/auth/login',
         {
           email: credentials.email,
           password: credentials.password,
